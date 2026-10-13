@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ParlezPrep aide les apprenants à préparer le TCF / TEF canadien avec des exercices AI adaptatifs, une progression CECRL et des simulations d'examens."
+    />
+    <title>ParlezPrep | Préparation TCF / TEF</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">P</div>
+        <div>
+          <div class="brand-name">ParlezPrep</div>
+          <div class="brand-tag">French mastery for exam success</div>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#programme">Programme</a>
+        <a href="#coach">AI Coach</a>
+        <a href="#examens">Examens</a>
+        <a href="#niveaux">Niveaux</a>
+      </nav>
+      <button class="primary-btn">Commencer</button>
+    </header>
+
+    <main>
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <span class="eyebrow">Préparation avancée du français</span>
+          <h1>Apprenez le français avec un accompagnement intelligent, structuré et orienté vers le TCF / TEF.</h1>
+          <p>
+            Une plateforme conçue pour les étudiants, futurs immigrants et apprenants motivés qui veulent progresser du niveau A1 au C2 avec des exercices personnalisés, des fiches ciblées et des simulations d’examens réalistes.
+          </p>
+          <div class="cta-row">
+            <button class="primary-btn">Découvrir le parcours</button>
+            <button class="secondary-btn">Voir les examens</button>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <strong>6</strong>
+              <span>niveaux CECRL</span>
+            </div>
+            <div>
+              <strong>12</strong>
+              <span>simulations</span>
+            </div>
+            <div>
+              <strong>4</strong>
+              <span>compétences clés</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="panel-top">
+            <span class="status-dot"></span>
+            <span>Suivi d'entraînement</span>
+          </div>
+          <div class="panel-score-box">
+            <div>
+              <div class="mini-label">Score actuel</div>
+              <div class="score-value">82%</div>
+            </div>
+            <div class="ring">
+              <span>+14%</span>
+            </div>
+          </div>
+          <div class="mini-list">
+            <div class="mini-item">
+              <span>Écoute</span>
+              <strong>90%</strong>
+            </div>
+            <div class="mini-item">
+              <span>Lecture</span>
+              <strong>84%</strong>
+            </div>
+            <div class="mini-item">
+              <span>Expression écrite</span>
+              <strong>76%</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-strip section-shell" id="programme">
+        <div class="feature-card">
+          <span class="feature-icon">🎯</span>
+          <h3>Progression personnalisée</h3>
+          <p>Des exercices ajustés à votre niveau réel, de A1 à C2.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🧠</span>
+          <h3>IA tutorielle</h3>
+          <p>Des entraînements qui adaptenent le débit, la difficulté et le style des tâches.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📘</span>
+          <h3>Prêt pour TCF / TEF</h3>
+          <p>Des modules orientés compréhension orale, écrite, grammaire et expression.</p>
+        </div>
+      </section>
+
+      <section class="coach section-shell" id="coach">
+        <div class="section-heading">
+          <span class="eyebrow">AI Coach</span>
+          <h2>Des exercices automatiquement adaptés à votre niveau</h2>
+        </div>
+
+        <div class="coach-panel">
+          <div class="selector-group">
+            <label>Niveau</label>
+            <div class="chip-grid" id="levelButtons" aria-label="Choisir un niveau"></div>
+          </div>
+
+          <div class="selector-group">
+            <label>Compétence</label>
+            <div class="chip-grid" id="skillButtons" aria-label="Choisir une compétence"></div>
+          </div>
+
+          <div class="exercise-card">
+            <div class="exercise-meta">
+              <span id="exerciseLevel">A1</span>
+              <span id="exerciseSkill">Compréhension orale</span>
+            </div>
+            <h3 id="exerciseTitle">Exercice guidé</h3>
+            <p id="exercisePrompt"></p>
+            <div id="optionsList" class="options-list"></div>
+            <div class="exercise-footer">
+              <button id="generateBtn" class="primary-btn">Générer un nouvel exercice</button>
+              <button id="checkBtn" class="secondary-btn subtle">Vérifier la réponse</button>
+            </div>
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="exam section-shell" id="examens">
+        <div class="section-heading">
+          <span class="eyebrow">Simulations</span>
+          <h2>Parcours de préparation pour les examens</h2>
+        </div>
+
+        <div class="exam-grid" id="examGrid"></div>
+      </section>
+
+      <section class="levels section-shell" id="niveaux">
+        <div class="section-heading">
+          <span class="eyebrow">Progression</span>
+          <h2>Des apprentissages structurés de A1 à C2</h2>
+        </div>
+
+        <div class="levels-grid">
+          <div class="level-card">
+            <div class="level-badge a1">A1</div>
+            <h3>Débutant</h3>
+            <ul>
+              <li>Salutations et présentations</li>
+              <li>Vocabulaire quotidien</li>
+              <li>Expressions simples</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <div class="level-badge a2">A2</div>
+            <h3>Élémentaire</h3>
+            <ul>
+              <li>Vie quotidienne</li>
+              <li>Routines et loisirs</li>
+              <li>Dialogues courants</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <div class="level-badge b1">B1</div>
+            <h3>Intermédiaire</h3>
+            <ul>
+              <li>Argent et travail</li>
+              <li>Opinions et justification</li>
+              <li>Compréhension de situations réelles</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <div class="level-badge b2">B2</div>
+            <h3>Avancé</h3>
+            <ul>
+              <li>Arguments complexes</li>
+              <li>Contexte professionnel</li>
+              <li>Texte argumentatif</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <div class="level-badge c1">C1</div>
+            <h3>Autonome</h3>
+            <ul>
+              <li>Analyse critique</li>
+              <li>Expression nuancée</li>
+              <li>Textes académiques</li>
+            </ul>
+          </div>
+          <div class="level-card">
+            <div class="level-badge c2">C2</div>
+            <h3>Maîtrise</h3>
+            <ul>
+              <li>Rôle de formateur</li>
+              <li>Précision linguistique</li>
+              <li>Performance d’examen</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="plan section-shell">
+        <div class="section-heading">
+          <span class="eyebrow">Plan d'entraînement</span>
+          <h2>Un suivi motivant sur 7 jours</h2>
+        </div>
+
+        <div class="plan-grid">
+          <div class="plan-item active">
+            <span>Jour 1</span>
+            <strong>Compréhension orale</strong>
+            <small>20 min</small>
+          </div>
+          <div class="plan-item">
+            <span>Jour 2</span>
+            <strong>Grammaire</strong>
+            <small>25 min</small>
+          </div>
+          <div class="plan-item">
+            <span>Jour 3</span>
+            <strong>Expression écrite</strong>
+            <small>30 min</small>
+          </div>
+          <div class="plan-item">
+            <span>Jour 4</span>
+            <strong>Lecture</strong>
+            <small>20 min</small>
+          </div>
+          <div class="plan-item">
+            <span>Jour 5</span>
+            <strong>Vocabulaire</strong>
+            <small>15 min</small>
+          </div>
+          <div class="plan-item">
+            <span>Jour 6</span>
+            <strong>Entretien</strong>
+            <small>20 min</small>
+          </div>
+          <div class="plan-item">
+            <span>Jour 7</span>
+            <strong>Simulation</strong>
+            <small>45 min</small>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer section-shell">
+      <div>
+        <div class="brand-name">ParlezPrep</div>
+        <p>Préparez votre français avec clarté, discipline et confiance.</p>
+      </div>
+      <button class="primary-btn">Réserver une démonstration</button>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
